@@ -1,0 +1,98 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main style="margin-top: 150px;">
+                <!-- <div class="titles">
+                    <h2>Our <span>Products</span> </h2>
+                </div>
+                <div class="cart-container">
+                    <% if (prods.length > 0) { %>
+                        <div class="row">
+                            <% for (let product of prods) { %>
+                                <form action="/cart" method="POST">
+                                    <article class="cart col-lg-3 col-md-4 col-sm-4">
+                                        <header>
+                                            <h1>
+                                                <%= product.title %>
+                                            </h1>
+                                        </header>
+                                        <div>
+                                            <img src="<%= product.image %>" alt="A Book">
+                                        </div>
+                                        <div>
+                                            <h2>
+                                                <%= product.price %>
+                                            </h2>
+                                            <p>
+                                                <%= product.desc %>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="primary-btn">Add to cart</button>
+                                            <a class="primary-btn">Details</a>
+
+                                        </div>
+                                    </article>
+                                </form>
+                                <% } %>
+                        </div>
+                </div>
+                <% } else { %>
+                    <h1>No Products Found!</h1>
+                    <% } %> -->
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/images/banner-1.jpg" class="d-block w-100 banner-img" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2><span class="text-emph">NEW</span> ARRIVALS</h2>
+                                    <p>Check out our brand new collection, only the latest fashion</p>
+                                    <button class="button">CHECK IT OUT</button>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/banner-2.jpg" class="d-block w-100 banner-img" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2><span class="text-emph">GET</span> THE LOOK</h2>
+                                    <p>Surf our collection to find the best and latest fashion, filled with the best
+                                        quality.</p>
+                                        <button class="button">VISIT STORE</button>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/banner-3.jpg" class="d-block w-100 banner-img" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2><span class="text-emph">SAVE</span> MONEY</h2>
+                                    <p>Sales are always on in our store, so save up, and surf our on going sales.</p>
+                                    <button class="button">VISIT SALES</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+            </main>
+            <%- include('../includes/footer.ejs') %>
+
+                <%- include('../includes/end.ejs') %>

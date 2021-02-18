@@ -1,0 +1,161 @@
+:root{
+    --primary-color:#232222;
+    --primary-lighter:#47484b;
+    --secondary-color:#01bab2;
+    --hover-text:#56bbb3;
+    
+    --text-color:#fff;
+    --white:#fff;
+}
+.main-header {
+    background-color: var(--primary-color);
+    margin-bottom: 10px;
+    
+}
+
+.main-header-ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.main-header-ul li a {
+    text-decoration: none;
+    color:var(--text-color);
+}
+
+.main-header-ul li a.active{
+    text-decoration: none;
+    color:var(--secondary-color);
+    background-color: var(--primary-color);
+}
+.main-header-ul li a:hover {
+    text-decoration: none;
+    color:var(--hover-text);
+    background-color: var(--primary-color);
+}
+.main-header-ul li button{
+    margin-top: 8px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+.main-header-ul li button.active{
+    text-decoration: none;
+    color:var(--secondary-color);
+    background-color: var(--primary-color);
+    box-shadow: none;
+}
+.main-header-ul li button:hover {
+    text-decoration: none;
+    color:var(--hover-text);
+    background-color: var(--primary-color);
+    box-shadow: none;
+}
+.dropdown{
+    display: inline-block;
+}
+.dropdown-menu{
+    background-color: var(--primary-color);
+}
+.dropdown-menu li a{
+    padding-left: 25px;
+    color: var(--text-color);
+}
+.dropdown-menu li a:hover{
+    background-color: var(--primary-color);
+    color: var(--hover-text);
+}
+.dropdown-menu hr{
+    border-color: var(--primary-lighter);
+}
+.navbar-toggle.collapsed {
+    background-color:var(--secondary-color);
+}
+.icon-bar {
+    color: var(--white);
+    background-color: var(--text-color);
+}
+.left-nav-items{
+    display: inline;
+    float: right;
+    margin-right: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
+}
+.left-nav-items form{
+    display: inline;
+}
+.left-nav-items form input{
+    border-radius: 50px;
+    border: none;
+    width: 200px;
+}
+.left-nav-items form button{
+    border: none;
+    
+    background-color: var(--primary-color);
+}
+.left-nav-items button label{
+    color: var(--text-color);
+
+}
+.left-nav-items button{
+    background-color: var(--primary-color);
+    border: none;
+}
+.left-nav-items form .fa-search{
+    color: var(--white);
+}
+.icon-secondary{
+    color: var(--secondary-color);
+}
+footer{
+    margin-top: 40px;
+    background-color: var(--primary-color);
+    
+}
+.footer-title{
+    color: var(--text-color);
+    margin-top: 60px;
+}
+.footer-list{
+    list-style: none;
+    
+}
+.footer-list a,li{
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;  
+    margin-top: 10px; 
+}
+#subs-label{
+    color: var(--hover-text);
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 17px;
+
+}
+#subscribe-email{
+    width: 70%;
+    height: 40px;
+    margin-right: 0%;
+    border: none;
+    margin-right: 0%;
+    padding-right: 0%;
+    margin-top: 20px;
+    
+}
+#submit{
+    background-color: var(--secondary-color);
+    color: var(--white);
+    height:40px;
+    border: none;
+    margin-left: 0%;
+    
+}
+.social{
+    display: inline;
+    color: var(--secondary-color);
+    margin-left: 40px;
+    margin-top: 20px;
+}
