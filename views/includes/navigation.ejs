@@ -21,6 +21,9 @@
                         <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
                     </li>
                     <li>
+                        <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
+                    </li>
+                    <li>
                         <div class="dropdown">
                             <button class="<%= path === '/products' ? 'active btn dropdown-toggle' : 'btn btn-secondary dropdown-toggle' %>" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Store
@@ -30,7 +33,6 @@
                                 <li><a class="<%= path === '/products/men' ? 'dropdown-item active' : 'dropdown-item' %>" href="/products/men">Men's Wear</a></li>
                                 <li><a class="<%= path === '/products/women' ? 'dropdown-item active' : 'dropdown-item' %>" href="/products/women">Women's Wear</a></li>
                                 <li><a class="<%= path === '/products/kids' ? 'dropdown-item active' : 'dropdown-item' %>" href="/products/kids">Kid's Wear</a></li>
-                                <li><a class="<%= path === '/products/accessories' ? 'dropdown-item active' : 'dropdown-item' %>" href="/products/accessories">Accessories</a></li>
                             </ul>
                         </div>
                     </li>
@@ -43,11 +45,11 @@
                                 Product
                             </a>
                         </li> -->
-                    <!-- <li>
+                    <li>
                         <a class="<%= path === '/admin/add-product' ? 'active' : '' %>" href="/admin/add-product">Add
                                 Product
                             </a>
-                    </li> -->
+                    </li>
                     <li>
                         <a class="<%= path === '/admin/products' ? 'active' : '' %>" href="/admin/products">Edit
                             Products

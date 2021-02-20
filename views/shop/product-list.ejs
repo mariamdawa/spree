@@ -33,7 +33,9 @@
                                         </div>
                                         <div>
                                             <button type="submit" class="primary-btn">Add to cart</button>
-                                            <a class="primary-btn">Details</a>
+                                            <input type="hidden" name="productId" value="<%= product.id %>">
+
+                                            <a href="/products/<%= product.id %>" class="primary-btn">Details</a>
 
                                         </div>
                                     </article>

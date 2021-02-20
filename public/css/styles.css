@@ -2,37 +2,6 @@ body {
     background-color: rgb(244 247 246);
 }
 
-.main-header {
-    background-color: #94b5c0;
-    margin-bottom: 10px;
-}
-
-.main-header-ul li {
-    list-style: none;
-    display: inline-block;
-}
-
-.main-header-ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.main-header-ul li a.active,
-.main-header-ul li a:hover {
-    text-decoration: none;
-    color: rgb(216, 23, 9);
-    background-color: #94b5c0;
-}
-
-.navbar-toggle.collapsed {
-    background-color: brown;
-}
-
-.icon-bar {
-    color: #fff;
-    background-color: #fff;
-}
-
 .form-container {
     background-color: rgb(244 247 246);
     border: 1px solid #BFBFBF;
@@ -58,6 +27,11 @@ body {
 
 .product-form input {
     height: 35px;
+    border-radius: 5px;
+}
+
+.product-form textarea {
+    border-radius: 5px;
 }
 
 .product-form input:hover,
@@ -69,6 +43,7 @@ body {
     border-color: rgb(156, 155, 155);
     transform: scale(1.05);
     outline: none !important;
+    border-radius: 5px;
 }
 
 .product-form label {
@@ -83,8 +58,7 @@ body {
     color: #fff;
     display: inline-block;
     font-size: 15px;
-    font-weight: 900;
-    padding: 12px 20px;
+    padding: 7px 15px;
     text-transform: uppercase;
     outline: medium none;
     transition: .3s ease-in-out;
@@ -155,4 +129,30 @@ body {
 
 main {
     padding: 20px;
+}
+
+.create-account {
+    margin-top: 20px;
+}
+
+.create-account span a {
+    color: #01bab2;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+main.login {
+    margin-top: 50px;
+    text-align: -webkit-center;
+    text-align: center;
+}
+
+.login .form-container {
+    display: inline-block;
+}
+
+.login input {
+    margin: 10px;
+    width: 100%;
 }

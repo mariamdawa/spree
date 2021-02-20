@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
+//to generate a unique id to each product
+const { v4: uuidv4 } = require('uuid');
+
+
 const p = path.join(
     path.dirname(process.mainModule.filename),
     'data',
@@ -28,15 +32,44 @@ module.exports = class Product {
     }
 
     save() {
+
+        ///console.log(this.id);
         getProductsFromFile(products => {
-            products.push(this);
-            fs.writeFile(p, JSON.stringify(products), err => {
-                console.log(err);
-            });
+            //check if we have that id tha means we want to edit
+            if (this.id) {
+                const existingProductIndex = products.findIndex(prod => prod.id === this.id);
+                const updatedProducts = [...products];
+                updatedProducts[existingProductIndex] = this;
+
+                fs.writeFile(p, JSON.stringify(products), err => {
+                    console.log(err);
+                });
+            } else {
+                //add new property: id
+                this.id = uuidv4();
+
+                products.push(this);
+
+                fs.writeFile(p, JSON.stringify(products), err => {
+                    console.log(err);
+                });
+            }
+
+
         });
     }
 
     static fetchAll(cb) {
         getProductsFromFile(cb);
+    }
+
+    static findById(id, cb) {
+        getProductsFromFile(products => {
+            const product = products.find(p => p.id === id);
+            console.log("My product");
+            //console.log(product);
+            cb(product);
+        });
+
     }
 };
