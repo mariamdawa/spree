@@ -19,4 +19,7 @@ router.get('/checkout', shopController.getCheckout);
 ///:productId that means it's a dynamic route
 router.get('/products/:productId', shopController.getProductDetail);
 
+
+router.post('/cart-delete-item', shopController.postCartDeleteProduct);
+
 module.exports = router;

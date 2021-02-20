@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const Cart = require('./cart');
 
 //to generate a unique id to each product
 const { v4: uuidv4 } = require('uuid');
@@ -23,7 +24,8 @@ const getProductsFromFile = cb => {
 
 
 module.exports = class Product {
-    constructor(title, image, price, desc, info) {
+    constructor(id, title, image, price, desc, info) {
+        this.id = id;
         this.title = title;
         this.image = image;
         this.price = price;
@@ -40,8 +42,9 @@ module.exports = class Product {
                 const existingProductIndex = products.findIndex(prod => prod.id === this.id);
                 const updatedProducts = [...products];
                 updatedProducts[existingProductIndex] = this;
-
-                fs.writeFile(p, JSON.stringify(products), err => {
+                console.log("this");
+                console.log(this);
+                fs.writeFile(p, JSON.stringify(updatedProducts), err => {
                     console.log(err);
                 });
             } else {
@@ -57,7 +60,7 @@ module.exports = class Product {
 
 
         });
-    }
+    };
 
     static fetchAll(cb) {
         getProductsFromFile(cb);
@@ -66,9 +69,23 @@ module.exports = class Product {
     static findById(id, cb) {
         getProductsFromFile(products => {
             const product = products.find(p => p.id === id);
-            console.log("My product");
-            //console.log(product);
             cb(product);
+        });
+
+    }
+
+
+    static deleteById(id) {
+        getProductsFromFile(products => {
+            const product = products.find(p => p.id === id);
+            const updatedProducts = products.filter(p => p.id !== id);
+            fs.writeFile(p, JSON.stringify(updatedProducts), err => {
+                console.log(err);
+                if (!err) {
+                    //remove that product from cart
+                    Cart.deleteProduct(id, product.price);
+                }
+            });
         });
 
     }

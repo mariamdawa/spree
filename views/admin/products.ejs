@@ -13,7 +13,7 @@
                     <% if (prods.length > 0) { %>
                         <div class="row">
                             <% for (let product of prods) { %>
-                                <form action="/" method="POST">
+                                <form action="/admin/delete-product" method="POST">
                                     <article class="cart col-lg-3 col-md-4 col-sm-4">
                                         <header>
                                             <h1>
@@ -33,6 +33,7 @@
                                         </div>
                                         <div>
                                             <a href="/admin/edit-product/<%=product.id%>?edit=true" class="primary-btn">Edit</a>
+                                            <input type="hidden" value="<%= product.id %>" name="productId">
                                             <button type="submit" class="primary-btn delete">Delete</button>
 
                                         </div>

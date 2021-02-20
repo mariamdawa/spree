@@ -4,7 +4,57 @@
 
     <body>
         <%- include('../includes/navigation.ejs') %>
+            <main style="margin-top: 50px;">
 
+                <% if (cart.length > 0) { %>
+                    <div class="titles">
+                        <h2>Cart <span>Products</span> </h2>
+                    </div>
+                    <div class="row">
+                        <% for (let product of cart) { %>
+
+                            <article class="cart col-lg-3 col-md-4 col-sm-4">
+                                <form action="/cart-delete-item" method="POST">
+                                    <header>
+                                        <h1>
+                                            <%= product.productData.title %>
+                                        </h1>
+                                    </header>
+                                    <div>
+                                        <img src="<%= product.productData.image %>" alt="A Book">
+                                    </div>
+                                    <div>
+                                        <h2>
+                                            product Price=
+                                            <%= product.productData.price %>
+                                        </h2>
+                                        <p>Product Quantity=
+                                            <%= product.qty %>
+                                        </p>
+                                    </div>
+                                    <input type="hidden" value="<%= product.productData.id %>" name="productId">
+                                    <button type="submit" class="primary-btn delete">Delete</button>
+                            </article>
+                            </form>
+                            <% } %>
+                    </div>
+
+                    </div>
+                    <% } else { %>
+                        <h1>No Products Found!</h1>
+                        <% } %>
+                            <h3>
+                                Total Price=
+                                <%=totalPrice %>
+
+                            </h3>
+                            <form action="/orders" method="POST">
+                                <button type="submit" class="primary-btn ">Order Now</button>
+
+                            </form>
+
+
+            </main>
 
             <%- include('../includes/footer.ejs') %>
 
