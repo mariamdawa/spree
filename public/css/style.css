@@ -186,7 +186,7 @@ li {
     color: var(--text-color);
     width: 25%;
     height: 20%;
-    font-size: 25px;
+    font-size: 99%;
     padding-top: 5px;
     border: none;
 }
@@ -196,7 +196,7 @@ li {
     color: var(--text-color);
     width: 25%;
     height: 20%;
-    font-size: 25px;
+    font-size: 99%;
     padding-top: 5px;
     border: none;
 }
@@ -206,7 +206,7 @@ li {
     color: var(--text-color);
     width: 100px;
     height: 15%;
-    font-size: 15px;
+    font-size: 99%;
     border-radius: 5px;
     border: none;
     font-weight: bold;
@@ -217,7 +217,7 @@ li {
     color: var(--text-color);
     width: 100px;
     height: 15%;
-    font-size: 15px;
+    font-size: 99%;
     border-radius: 5px;
     border: none;
     font-weight: bold;
@@ -228,7 +228,7 @@ li {
     color: var(--text-color);
     width: 130px;
     height: 40px;
-    font-size: 20px;
+    font-size: 99%;
     border-radius: 5px;
     border: none;
     font-weight: bold;
@@ -393,7 +393,7 @@ li {
 }
 
 .product-details {
-    padding-left: 10%;
+    padding: 5%;
     background-color: var(--background);
     border-radius: 7px;
 }
@@ -430,4 +430,34 @@ li {
     padding: 80px;
     border: 2px solid;
     border-radius: 6px;
+}
+.float-right{
+    float: right;
+    margin-right:50px ;
+}
+.text-left{
+    display: inline;
+    font-size: 20px;
+    font-weight: bold;
+}
+.inline{
+    display: inline;
+}
+.tab{
+    padding: 8%;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.form-label{
+    font-size: 20px;
+}
+.form-input{
+    width: 200%;
+    margin-bottom: 13px;
+    margin-left: 50px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
 }
