@@ -1,3 +1,5 @@
+const User = require('../models/user');
+
 exports.getLoginPage = (req, res) => {
     res.render('login', {
         path: '/login',
@@ -7,13 +9,49 @@ exports.getLoginPage = (req, res) => {
 }
 
 exports.postLogin = (req, res) => {
-    res.redirect('/shop/product-list');
+    console.log(req.body);
+    User.findById(req.body.email).then(user => {
+        if (!user) {
+            res.redirect('/signup');
+        } else {
+            req.user = user;
+            res.setHeader('set-cookie', 'User =user');
+            res.redirect('/shop/product-list');
+        }
+    });
+
 }
+
+
+exports.postSignUp = (req, res) => {
+    console.log(req.body);
+    const user = new User({
+        _id: req.body.email,
+        name: req.body.username,
+        password: req.body.password,
+        confirmPassword: req.body.confirmPassword,
+        cart: {
+            items: [],
+            totalPrice: 0
+        }
+    });
+    //req.user = user;
+    user.save();
+    res.redirect('/shop/product-list');
+};
 
 exports.getSignUp = (req, res) => {
     res.render('signup', {
         path: '/signup',
         pageTitle: 'Sign Up'
 
+    });
+}
+
+exports.getProfile = (req, res) => {
+    res.render('profile', {
+        path: '/profile',
+        pageTitle: 'Profile',
+        user: req.myUser
     });
 }
