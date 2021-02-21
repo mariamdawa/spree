@@ -16,7 +16,7 @@ exports.postLogin = (req, res) => {
         } else {
             req.user = user;
             res.setHeader('set-cookie', 'User =user');
-            res.redirect('/shop/product-list');
+            res.redirect('/products');
         }
     });
 
@@ -37,7 +37,7 @@ exports.postSignUp = (req, res) => {
     });
     //req.user = user;
     user.save();
-    res.redirect('/shop/product-list');
+    res.redirect('/products');
 };
 
 exports.getSignUp = (req, res) => {
