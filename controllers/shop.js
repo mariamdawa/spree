@@ -6,7 +6,27 @@ exports.getProducts = (req, res, next) => {
         res.render('shop/product-list', {
             prods: products,
             pageTitle: 'Shop',
-            path: '/',
+            path: '/products',
+
+        });
+    });
+};
+exports.getProductsMale = (req, res, next) => {
+    Product.fetchAll(products => {
+        res.render('shop/men', {
+            prods: products,
+            pageTitle: 'Men\'s Wear',
+            path: '/products/men',
+
+        });
+    });
+};
+exports.getProductsFemale = (req, res, next) => {
+    Product.fetchAll(products => {
+        res.render('shop/women', {
+            prods: products,
+            pageTitle: 'Women\'s Wear',
+            path: '/products/women',
 
         });
     });
@@ -17,8 +37,8 @@ exports.getIndex = (req, res) => {
 
         res.render('shop/index', {
             prods: products,
-            pageTitle: 'All Products',
-            path: '/products',
+            pageTitle: 'Spree - HomePage',
+            path: '/',
 
         });
     });

@@ -99,6 +99,8 @@ body {
     height: 450px;
     margin: 15px;
     transition: ease-in-out 0.3s;
+    width: 27%;
+    
 }
 
 .cart:hover {
@@ -106,12 +108,12 @@ body {
 }
 
 .cart img {
-    width: 70%;
+    width: 90%;
     height: 200px;
 }
 
 .cart-container {
-    margin-left: 150px;
+    
     text-align: center;
 }
 

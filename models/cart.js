@@ -6,6 +6,11 @@ const p = path.join(
     'data',
     'cart.json'
 );
+// const pr = path.join(
+//     path.dirname(process.mainModule.filename),
+//     'data',
+//     'products.json'
+// );
 
 module.exports = class Cart {
 
@@ -30,6 +35,10 @@ module.exports = class Cart {
                 //replace the old product with a new in cart object=> cart.products[]
                 cart.products[existingProductIndex] = updatedProduct;
             } else {
+                // fs.readFile(pr, (err, fileContent) => {
+                //     let pd=JSON.parse(fileContent);
+                //     updatedProduct=pd.find(p=>id==p.id);
+                // });
                 //that means we have a new product 
                 updatedProduct = { id: id, qty: 1 };
                 //add the new product(updated product ) to a cart object =>cart.products[]
