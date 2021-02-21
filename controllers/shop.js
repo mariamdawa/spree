@@ -1,23 +1,33 @@
 const Product = require('../models/product');
 
+//const User = require('../models/user');
+
+
 exports.getProducts = (req, res, next) => {
     Product.find().then(products => {
         res.render('shop/product-list', {
             prods: products,
             pageTitle: 'Shop',
-            path: '/',
+            path: '/products',
+
+
 
         });
     });
 };
+
 
 exports.getIndex = (req, res) => {
     Product.find().then(products => {
 
         res.render('shop/index', {
             prods: products,
+
             pageTitle: 'All Products',
-            path: '/products',
+
+            pageTitle: 'Spree - HomePage',
+
+            path: '/',
 
         });
     });
@@ -82,7 +92,6 @@ exports.postCartDeleteProduct = (req, res) => {
 
 
 };
-
 
 exports.getWishList = (req, res) => {
 

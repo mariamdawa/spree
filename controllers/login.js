@@ -51,7 +51,10 @@ exports.getSignUp = (req, res) => {
 exports.getProfile = (req, res) => {
     res.render('profile', {
         path: '/profile',
+
         pageTitle: 'Profile',
         user: req.myUser
+
+
     });
 }
