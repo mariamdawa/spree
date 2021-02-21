@@ -24,17 +24,7 @@
                         <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
                     </li>
                     <li>
-                        <div class="dropdown">
-                            <button class="<%= path === '/products' ? 'active btn dropdown-toggle' : 'btn btn-secondary dropdown-toggle' %>" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Store
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="<%= path === '/products' ? 'dropdown-item active' : 'dropdown-item' %>" href="/products">Shop All Store</a></li>
-                                <li><a class="<%= path === '/products/men' ? 'dropdown-item active' : 'dropdown-item' %>" href="/products/men">Men's Wear</a></li>
-                                <li><a class="<%= path === '/products/women' ? 'dropdown-item active' : 'dropdown-item' %>" href="/products/women">Women's Wear</a></li>
-                                <li><a class="<%= path === '/products/kids' ? 'dropdown-item active' : 'dropdown-item' %>" href="/products/kids">Kid's Wear</a></li>
-                            </ul>
-                        </div>
+                        <a class="<%= path === '/products' ? 'active' : '' %>" href="/products">Products</a>
                     </li>
                     <li>
                         <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">View Cart</a>
@@ -64,8 +54,11 @@
                     <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"> </i></button>
                 </form>
                 <button>
-                    <i class="fas fa-shopping-cart fa-lg icon-secondary"></i>
+                    <a href="/cart">
+                        <i class="fas fa-shopping-cart fa-lg icon-secondary"></i>
                     <label for="" name="shopping_cart">(0)</label>
+                    </a>
+                    
                 </button>
 
                 <div class="dropdown">
@@ -75,11 +68,11 @@
                         <label for="">Profile</label>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Go To Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Orders</a></li>
-                        <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                        <li><a class="dropdown-item" href="/profile">Go To Profile</a></li>
+                        <li><a class="dropdown-item" href="/checkout">Orders</a></li>
+                        <li><a class="dropdown-item" href="/wishlist">Wishlist</a></li>
                         <hr>
-                        <li><a class="dropdown-item" href="#">LogOut <i
+                        <li><a class="dropdown-item" href="/">LogOut <i
                                     class="fas fa-sign-out-alt icon-secondary"></i></a></li>
                     </ul>
                 </div>

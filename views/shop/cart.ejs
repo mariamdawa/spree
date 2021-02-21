@@ -17,22 +17,24 @@
                                 <form action="/cart-delete-item" method="POST">
                                     <header>
                                         <h1>
-                                            <%= product.productData.title %>
+                                            <%= product.productId.title %>
                                         </h1>
                                     </header>
                                     <div>
-                                        <img src="<%= product.productData.image %>" alt="A Book">
+                                        <img src="<%= product.productId.image %>" alt="A Book">
                                     </div>
                                     <div>
                                         <h2>
                                             product Price=
-                                            <%= product.productData.price %>
+                                            <%= product.productId.price %>
                                         </h2>
                                         <p>Product Quantity=
-                                            <%= product.qty %>
+                                            <%= product.quantity %>
                                         </p>
                                     </div>
-                                    <input type="hidden" value="<%= product.productData.id %>" name="productId">
+                                    <input type="hidden" value="<%= product.productId.id %>" name="productId">
+                                    <input type="hidden" value="<%= product.productId.price %>" name="productPrice">
+
                                     <button type="submit" class="primary-btn delete">Delete</button>
                             </article>
                             </form>

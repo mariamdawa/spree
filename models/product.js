@@ -1,4 +1,37 @@
-const fs = require('fs');
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+
+const productSchema = new Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    desc: {
+        type: String,
+        required: true
+    },
+    info: {
+        type: String,
+        required: true
+    }
+});
+
+module.exports = mongoose.model('Product', productSchema);
+
+
+
+
+
+/*const fs = require('fs');
 const path = require('path');
 const Cart = require('./cart');
 
@@ -65,7 +98,7 @@ module.exports = class Product {
     static fetchAll(cb) {
         getProductsFromFile(cb);
     }
-
+    
     static findById(id, cb) {
         getProductsFromFile(products => {
             const product = products.find(p => p.id === id);
@@ -90,3 +123,4 @@ module.exports = class Product {
 
     }
 };
+*/
